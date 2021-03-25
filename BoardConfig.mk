@@ -45,9 +45,11 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SUPPRESS_SECURE_ERASE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
+TARGET_RECOVERY_FSTAB := device/vsmart/V420A/twrp.fstab
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000 androidboot.usbconfigfs=true loop.max_part=7 buildvariant=user
@@ -77,9 +79,18 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
-# TWRP Configuration
+# TWRP-Specific
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TARGET_RECOVERY_PIXEL_FORMAT := RGBA_8888
+TW_Y_OFFSET := 50
+TW_H_OFFSET := -50
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_DEFAULT_BRIGHTNESS := 255
+TW_EXTRA_LANGUAGES := true
 TW_USE_TOOLBOX := true
+# TW_FORCE_USE_BUSYBOX := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
