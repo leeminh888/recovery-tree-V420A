@@ -94,3 +94,42 @@ TW_USE_TOOLBOX := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# SHRP-specific flags
+SHRP_DEVICE_CODE := V420A
+SHRP_PATH := device/vsmart/$(SHRP_DEVICE_CODE)
+SHRP_MAINTAINER := Leminh
+SHRP_REC_TYPE := Treble
+SHRP_DEVICE_TYPE := SAR
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /external_sd
+SHRP_OTG := /usb_otg
+SHRP_EDL_MODE := 1
+SHRP_FLASH := 1
+SHRP_STATUSBAR_RIGHT_PADDING := 48
+SHRP_STATUSBAR_LEFT_PADDING := 48
+SHRP_NOTCH := true
+SHRP_FLASH_MAX_BRIGHTNESS := 255
+INC_IN_REC_ADDON_1 := true
+INC_IN_REC_ADDON_2 := true
+INC_IN_REC_ADDON_3 := true
+INC_IN_REC_ADDON_4 := true
+INC_IN_REC_MAGISK := true
+
+# SHRP Custom Addon
+SHRP_EXTERNAL_ADDON_PATH := device/xiaomi/$(SHRP_DEVICE_CODE)/Addon/
+
+SHRP_EXTERNAL_ADDON_1_NAME := "Magisk Canary"
+SHRP_EXTERNAL_ADDON_1_FILENAME := "MagiskCanary-vf822ca5b.zip"
+SHRP_EXTERNAL_ADDON_1_INFO := "Magisk Canary is the bleeding edge build or the under development build of Magisk which might be unstable sometimes."
+SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Flash"
+SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Installed"
+SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
+
+SHRP_EXTERNAL_ADDON_3_NAME := "SELinux Permissiver"
+SHRP_EXTERNAL_ADDON_3_INFO := "Makes SELinux Permissive"
+SHRP_EXTERNAL_ADDON_3_FILENAME := "Permissiver_V5.zip"
+SHRP_EXTERNAL_ADDON_3_BTN_TEXT := "Flash"
+SHRP_EXTERNAL_ADDON_3_SUCCESSFUL_TEXT := "Installed"
+SHRP_INC_IN_REC_EXTERNAL_ADDON_3 := true
